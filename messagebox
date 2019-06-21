@@ -1,0 +1,14 @@
+
+public void messageboxSave()
+        {
+
+            DialogResult dr = MessageBox.Show("Save?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1);
+
+            
+
+        }
+
