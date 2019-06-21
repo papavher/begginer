@@ -1,0 +1,36 @@
+
+//this is the button for Save
+
+private void Button1_Click(object sender, EventArgs e)
+        {
+
+
+         //SQL Connection
+        string ConString = "Data Source=DESKTOP-7U8FMAO\\SQLEXPRESS;Initial Catalog=db_modulesir;Integrated Security=True";
+        //SQL  Query for save 
+        string Query = "insert into tbl_crud(productcode,productname) values('"+this.txt_productcode.Text+"','"+this.txt_productname.Text+"')";
+
+        //Sqlconnection +                        SQL Connection creta
+        SqlConnection ConConnection = new SqlConnection(ConString);
+        //SQLCommand                            Query,ConConnection
+        SqlCommand Commdatavase = new SqlCommand(Query, ConConnection);
+        //SQLReader
+        SqlDataReader sqlreader;
+            try
+            {
+                ConConnection.Open();
+                sqlreader = Commdatavase.ExecuteReader();
+                messageboxSave();
+                while (sqlreader.Read())
+                {
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
+
+        }
