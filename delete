@@ -1,0 +1,34 @@
+
+
+ public void Delete()
+        {
+
+            //SQL Connection
+            string ConString = "Data Source=DESKTOP-7U8FMAO\\SQLEXPRESS;Initial Catalog=db_modulesir;Integrated Security=True";
+            //SQL  Query for save 
+            string Query = "delete tbl_crud where productcode ='"+ txt_productcode.Text+ "'";
+
+            //Sqlconnection +                        SQL Connection creta
+            SqlConnection ConConnection = new SqlConnection(ConString);
+            //SQLCommand                            Query,ConConnection
+            SqlCommand Commdatavase = new SqlCommand(Query, ConConnection);
+            //SQLReader
+            SqlDataReader sqlreader;
+            try
+            {
+                ConConnection.Open();
+                sqlreader = Commdatavase.ExecuteReader();
+                MessageboxDelete();
+                while (sqlreader.Read())
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+
+        }
