@@ -3,12 +3,14 @@
 
  private void Showdata()
         {
-            SqlConnection con = new SqlConnection(constring);
-            con.Open();
-            DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select * from tbl_registration order by id desc",con);
-            adapt.Fill(dt);
-            dataGridView1.DataSource = dt;
-            con.Close();
+                string ConString = "Data Source=DESKTOP-7U8FMAO\\SQLEXPRESS;Initial Catalog=db_modulesir;Integrated Security=True";
+                SqlDataAdapter adapt;
+                SqlConnection ConConnection = new SqlConnection(ConString);
+                ConConnection.Open();
+                DataTable dt = new DataTable();
+                adapt = new SqlDataAdapter("select * from tbl_registration order by id desc", ConConnection);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+                ConConnection.Close();
 
         }
