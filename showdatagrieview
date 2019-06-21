@@ -1,0 +1,14 @@
+
+
+
+ private void Showdata()
+        {
+            SqlConnection con = new SqlConnection(constring);
+            con.Open();
+            DataTable dt = new DataTable();
+            adapt = new SqlDataAdapter("select * from tbl_registration order by id desc",con);
+            adapt.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+
+        }
