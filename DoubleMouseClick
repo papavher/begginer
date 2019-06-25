@@ -1,0 +1,18 @@
+
+
+
+private void DataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            txt_itemCode.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txt_productDescription.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txt_brandname.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txt_quantity.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txt_price.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txt_srp.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+        }
+        
+        
+        
+        
+        
